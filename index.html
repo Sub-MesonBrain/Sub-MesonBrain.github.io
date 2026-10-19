@@ -1,0 +1,53 @@
+---
+layout: default
+title: Independent research on markets and systems
+description: Notes on quantitative trading, crypto markets, Web3 mechanics, and the engineering behind them.
+---
+<section class="hero">
+  <div class="eyebrow"><span class="pulse-dot"></span> INDEPENDENT RESEARCH & ENGINEERING</div>
+  <h1>Markets, models<br><em>& systems.</em></h1>
+  <p class="hero-copy">Notes on quantitative trading, crypto markets, Web3 mechanics, systematic strategies, and the code behind them.</p>
+  <div class="hero-meta"><span>QUANTITATIVE FINANCE</span><span>·</span><span>CRYPTO</span><span>·</span><span>ENGINEERING</span></div>
+</section>
+
+<section class="writing-section" aria-labelledby="latest-title">
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow muted">THE RESEARCH LOG</div>
+      <h2 id="latest-title">Latest writing</h2>
+    </div>
+    <span class="post-count">{{ site.posts | size }} {% if site.posts.size == 1 %}ARTICLE{% else %}ARTICLES{% endif %}</span>
+  </div>
+
+  {% if site.posts.size > 0 %}
+  <div class="post-list">
+    {% for post in site.posts %}
+    <article class="post-card">
+      <div class="post-index">{{ forloop.index | prepend: '00' | slice: -2, 2 }}</div>
+      <div class="post-card-main">
+        <div class="post-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" | upcase }}</time>
+          {% for category in post.categories limit: 2 %}<span class="tag">{{ category | upcase }}</span>{% endfor %}
+          {% if post.tags contains 'draft-review' %}<span class="tag tag-review">REVIEW NOTES</span>{% endif %}
+        </div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 190 }}</p>
+        <a class="read-link" href="{{ post.url | relative_url }}">Read article <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="post-arrow" aria-hidden="true">↗</div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state">The first article is on its way.</div>
+  {% endif %}
+</section>
+
+<section class="topic-strip">
+  <div class="eyebrow muted">AREAS OF INTEREST</div>
+  <div class="topic-grid">
+    <div><span class="topic-number">01</span><strong>Quant research</strong><p>Signals, risk, backtests, and market structure.</p></div>
+    <div><span class="topic-number">02</span><strong>Crypto & Web3</strong><p>Protocols, trading mechanics, and on-chain markets.</p></div>
+    <div><span class="topic-number">03</span><strong>Systems engineering</strong><p>Data pipelines, execution, and infrastructure.</p></div>
+  </div>
+</section>

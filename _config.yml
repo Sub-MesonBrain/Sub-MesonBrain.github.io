@@ -1,0 +1,16 @@
+title: Quant Notes
+description: Independent notes on quantitative trading, crypto markets, Web3 mechanics, and systems engineering.
+url: "https://Sub-MesonBrain.github.io"
+baseurl: ""
+theme: minima
+plugins:
+  - jekyll-feed
+markdown: kramdown
+permalink: /posts/:title/
+lang: en
+
+exclude:
+  - README.md
+  - LICENSE
+
+collections: {}
